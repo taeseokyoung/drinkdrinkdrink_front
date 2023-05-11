@@ -7,12 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/signup.css">
-    <script src="./js/signup.js"></script>
-    <title>Document</title>
+    <script src="../js/signup.js"></script>
+    <title>Signup</title>
 </head>
 
 <body>
-
+    <h1>회원가입 페이지 </h1>
+    <form>
+        <input type="text" name="user_id" id="user_id" placeholder="id">
+        <input type="password" name="password" id="password" placeholder="password">
+        <input type="email" name="email" id="email" placeholder="email">
+        <input type="text" name="nickname" id="nickname" placeholder="nickname">
+        <button type="button" onclick="handleSignin()">제출</button>
+    </form>
 </body>
 
 </html>
