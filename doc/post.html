@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/post.css">
-    <script src="./js/post.js"></script>
-    <title>Document</title>
-</head>
+    <script src="../js/post.js"></script>
+    <title>게시물 작성 페이지</title>
+  </head>
 
-<body>
-
-</body>
+  <body>
+    <h2>새 게시물 작성</h2>
+    <form action="#" accept-char="utf-8" name="person_info" method="get">
+      <fieldset style="width:150">
+        <legend>술술술 게시물</legend>
+        제목 :
+        <input type="text" name="title" placeholder="제목을 입력해주세요" required="required"/><br><br>
+        사진 :
+        <input type="file" onchange="readURL(this);">
+        <img id="preview"/><br><br>
+        내용 :<br>
+        <textarea name="comment" placeholder="내용을 입력해주세요" required="required"></textarea><br><br>
+        별점 :
+        <input type="range" min="1" mav="5" name="stars" required="required"/><br><br>
+        좋아요 :
+        <input type="radio" name="likes"/><br><br>
+      </fieldset>
+    </form>
+  </body>
 
 </html>
