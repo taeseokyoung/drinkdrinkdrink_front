@@ -13,13 +13,36 @@
 
 <body>
     <h1>회원가입 페이지 </h1>
-    <form>
-        <input type="text" name="user_id" id="user_id" placeholder="id">
-        <input type="password" name="password" id="password" placeholder="password">
-        <input type="email" name="email" id="email" placeholder="email">
-        <input type="text" name="nickname" id="nickname" placeholder="nickname">
-        <button type="button" onclick="handleSignin()">제출</button>
-    </form>
+    <p>아이디 : <input type="text" name="user_id" id="user_id" placeholder="아이디"></p>
+    <p>비밀번호 : <input type="password" name="password" id="password" placeholder="비밀번호"></p>
+    <p>이메일 : <input type="email" name="email" id="email" placeholder="이메일"></p>
+    <p>닉네임 : <input type="text" name="nickname" id="nickname" placeholder="닉네임"></p>
+    <p>나이 : <input type="text" name="age" id="age" placeholder="나이"></p>
+    <p>주종 : <select name="fav_alcohol" id="fav_alcohol">
+            <option selected>----------</option>
+            <option value="SOJU">소주</option>
+            <option value="BEER">맥주</option>
+            <option value="WINE">와인</option>
+            <option value="LIQUOR">양주</option>
+            <option value="TAKJU">탁주</option>
+            <option value="ETC">기타</option>
+            <option value="NO">응답하지 않음</option>
+        </select></p>
+    <p>주량 : <select name="amo_alcohol" id="amo_alcohol">
+            <option selected>----------</option>
+            <option value="BABY">알쓰</option>
+            <option value="CHOBO">술찌</option>
+            <option value="JUNGSU">애주가</option>
+            <option value="GOSU">술꾼</option>
+            <option value="GOD">디오니소스</option>
+        </select></p>
+    <p>프로필 이미지 :
+        <input type="file" id="profile_img">
+    </p>
+    <button type="button" onclick="handleSignup()">회원가입</button>
+    <div><a href="/doc/signin.html">로그인</a></div>
+
+
 </body>
 
 </html>
