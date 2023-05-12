@@ -37,7 +37,8 @@
             <option value="GOD">디오니소스</option>
         </select></p>
     <p>프로필 이미지 :
-        <input type="file" id="profile_img">
+        <input type="file" id="profile_img" onchange="readURL(this);">
+        <img id="preview" />
     </p>
     <button type="button" onclick="handleSignup()">회원가입</button>
     <div><a href="/doc/signin.html">로그인</a></div>
