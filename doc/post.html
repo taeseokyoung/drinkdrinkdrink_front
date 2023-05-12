@@ -20,14 +20,20 @@
         제목 :
         <input type="text" name="title" id="title" placeholder="제목을 입력해주세요" required="required"/><br><br>
         사진 :
-        <input type="file" onchange="readURL(this);">
+        <input type="file" id="image" onchange="readURL(this);">
         <img id="preview"/><br><br>
         내용 :<br>
         <textarea name="comment" id="comment" placeholder="내용을 입력해주세요" required="required"></textarea><br><br>
         별점 :
-        <input type="range" min="1" mav="5" name="stars" id="stars" required="required"/><br><br>
-        좋아요 :
-        <input type="radio" name="likes" id="likes"/><br><br>
+        <!-- <input type="number" min="1" mav="5" name="stars" id="stars" required="required"/><br><br> -->
+        <select name="stars" id="stars">
+          <option value="1">⭐️</option>
+          <option value="2">⭐️⭐️</option>
+          <option value="3" selected="selected">⭐️⭐️⭐️</option>
+          <option value="4">⭐️⭐️⭐️⭐️</option>
+          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+        </select>
+
         <button type="button" onclick="handlePost()">저장</button>
       </fieldset>
     </form>
