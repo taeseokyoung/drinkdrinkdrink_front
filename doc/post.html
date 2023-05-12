@@ -12,20 +12,20 @@
   </head>
 
   <body>
+    <header></header>
     <h2>새 게시물 작성</h2>
     <!-- form 형식만 사용 -->
     <form>
-      <fieldset>
+      <fieldset class="postField" name="postField" id="postField">
         <legend>술술술 게시물</legend>
         제목 :
         <input type="text" name="title" id="title" placeholder="제목을 입력해주세요" required="required"/><br><br>
+        내용 :
+        <input type="textarea" name="content" id="content" placeholder="내용을 입력해주세요"/><br><br>
         사진 :
         <input type="file" id="image" onchange="readURL(this);">
         <img id="preview"/><br><br>
-        내용 :<br>
-        <textarea name="comment" id="comment" placeholder="내용을 입력해주세요" required="required"></textarea><br><br>
         별점 :
-        <!-- <input type="number" min="1" mav="5" name="stars" id="stars" required="required"/><br><br> -->
         <select name="stars" id="stars">
           <option value="1">⭐️</option>
           <option value="2">⭐️⭐️</option>
