@@ -1,3 +1,7 @@
+const frontend_base_url = "http://127.0.0.1:5500/"
+const backend_base_url = "http://127.0.0.1:8000/"
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzODk2MTU2LCJpYXQiOjE2ODM4OTQzNTYsImp0aSI6ImY5ZDRiMzU3YmFlNDRkMmU5NmFlNDQ5YWQxNjQ5MzU0IiwidXNlcl9pZCI6MX0.Zb6UyNOcNlbyXTjNM5jwSbLUi0CkshAzPz3VIhi-ac4"
+
 window.onload = ()=>{
     console.log("로딩!")
 }
@@ -15,45 +19,57 @@ function readURL(input) {
     }
   }
 
-// function selectStar(){
-//     const viewStars = document.getElementById("stars");
-//     const stars = viewStars.option[viewStars.selectedIndex].value;
 
-// }
 
 async function handlePost(){
-    const title = document.getElementById("title");
-    const comment = document.getElementById("comment");
-    const image = document.getElementById("image");
-    const viewStars = document.getElementById("stars");
-    const stars = viewStars.options[viewStars.selectedIndex].value;
+    const title = document.getElementById("title").value;
+    const content = document.getElementById("content").value;
+    const image = document.getElementById("image").files[0];
+    const stars = document.getElementById("stars").value;
 
-    
-    if (title.value && comment.value){
-        const response = await fetch('http://127.0.0.1:8000/write/', {
-        headers:{
-            'content-type':'application/json',
-        },
-        method:'POST',
-        body: JSON.stringify({
-            "title":title.value,
-            "comment":comment.value,
-            // "image":image.value,
-            "starts":stars
+    const formData = new FormData();
+
+
+    formData.append('title', title)
+    formData.append('content', content)
+    formData.append('image', image)
+    formData.append('stars', stars)
+
+    //로컬 스토리지에 토큰을 저장하면 이걸사용
+    // let token = localStorage.getItem("access")
+
+    if (title&&content){
+ 
+        const response = await fetch(`${backend_base_url}/write/`, {
+            method: 'POST',
+            headers: {
+                'Authorization':`Bearer ${token}`
+            },
+            body: formData
         })
+
+        if (response.status == 200) {
+            alert("게시글 작성완료")
+            // console.log(title, stars)
+            window.location.replace(`${frontend_base_url}`)
             
-        })
-        console.log(title.value, comment.value, stars) 
-        //
-        title.value = ""
-        comment.value = ""
+
+        } else {
+            //작성한 내용이 백에 들어가지 않을경우
+            // console.log(response.json())
+            alert("작성이 취소되었습니다")
+        }
+
+
     } else {
-        console.log("내용이 없습니다")
-        alert("값을 입력하세요")
+        //프론트에서 제목, 내용을 작성하지 않은 경우
+        alert("빈칸을 작성하세요")
     }
 
     
 }
+
+
 
 
 
