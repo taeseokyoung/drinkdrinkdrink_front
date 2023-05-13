@@ -19,7 +19,7 @@ async function postComment(articleId, newComment) {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
-      content: newComment,
+      content: newComment, 
     }),
   });
   if (response.status == 200) {
