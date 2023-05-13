@@ -1,19 +1,15 @@
-.home-title {
-  text-align: center;
-  border: solid black;
-}
-
 #profile-box {
   border: solid black;
   float: left;
   width: 20%;
-  height: 300px;
+  height: 200px;
   text-align: center;
   display: block;
+  margin-top: 35px;
 }
 
 #button-box {
-  line-height: 300px;
+  line-height: 200px;
 }
 
 #button-box > button {
@@ -42,6 +38,8 @@
   width: 75%;
   background-color: rgb(255, 247, 231);
   float: right;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 #content-box .img-box {
@@ -50,4 +48,19 @@
   display: block;
   object-fit: cover;
   margin: auto;
+  padding: 20px;
+}
+
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.home-title {
+  text-align: center;
+  font-size: 3rem;
+  border: solid black;
+  padding: 20px;
+  margin: 10px auto 10px auto;
 }
