@@ -3,8 +3,8 @@
 // const frontend_adress = "http://127.0.0.1:5500";
 
 //distribution?
-const backend_adress = "https://drinkdrinkdrink.onrender.com";
-const frontend_adress = "https://drinkdrinkdrink-front.onrender.com";
+const backend_adress = "https://backend.drinkdrinkdrink.xyz";
+const frontend_adress = "https://drinkdrinkdrink.xyz";
 
 // 홈 이동
 function moveHome() {
