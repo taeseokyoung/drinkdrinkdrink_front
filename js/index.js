@@ -1,5 +1,5 @@
-function moveDetail() {
-  window.location.href = `${frontend_adress}/doc/detail.html`;
+function moveDetail(article_id) {
+  window.location.href = `${frontend_adress}/doc/detail.html?article_id=${article_id}`;
 }
 
 window.onload = async function () {
@@ -11,7 +11,7 @@ window.onload = async function () {
   articles.forEach((article) => {
     const imageBox = document.createElement("img");
     imageBox.setAttribute("class", "img-box");
-    imageBox.setAttribute("onclick", "moveDetail()");
+    imageBox.setAttribute("onclick", `moveDetail(${article.id})`);
 
     if (article.image) {
       imageBox.setAttribute("src", `${backend_adress}${article.image}`);

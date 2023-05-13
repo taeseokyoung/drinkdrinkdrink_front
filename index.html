@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link` rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <script src="./js/index.js"></script>
     <script src="./js/api.js"></script>
@@ -12,19 +12,25 @@
   </head>
 
   <body>
-    <h1 class="home-title" onclick="moveHome()">술술술</h1>
-    <div id="profile-box">
-      <div id="button-box"></div>
-    </div>
-    <div id="article-box">
-      <div id="sort-btn">
-        <button id="follow-btn" onclick="handleArticles(this)">
-          팔로우 순
-        </button>
-        <button id="recent-btn" onclick="handleArticles(this)">최신 순</button>
-        <button id="likes-btn" onclick="handleArticles(this)">좋아요 순</button>
+    <div class="container">
+      <h1 class="home-title" onclick="moveHome()">술술술</h1>
+      <div id="profile-box">
+        <div id="button-box"></div>
       </div>
-      <div id="content-box"></div>
+      <div id="article-box">
+        <div id="sort-btn">
+          <button id="follow-btn" onclick="handleArticles(this)">
+            팔로우 순
+          </button>
+          <button id="recent-btn" onclick="handleArticles(this)">
+            최신 순
+          </button>
+          <button id="likes-btn" onclick="handleArticles(this)">
+            좋아요 순
+          </button>
+        </div>
+        <div id="content-box"></div>
+      </div>
     </div>
   </body>
 </html>
