@@ -45,8 +45,8 @@ async function handleSignup() {
     const response = await fetch(`${backend_base_url}/users/signup/`, {
         method: 'POST',
         body: formdata
-    }
-    )
+    })
+
     if (response.status == 201) {
         alert("회원가입을 축하합니다!")
         window.location.replace(`${frontend_base_url}/doc/login.html`)
@@ -62,4 +62,5 @@ async function handleSignupButton() {
         window.location.replace(`${frontend_base_url}/doc/login.html`)
     } else if (response.status == 400) { alert("회원가입에 실패했습니다.") }
     console.log(response)
+
 }

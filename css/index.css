@@ -1,0 +1,66 @@
+#profile-box {
+  border: solid black;
+  float: left;
+  width: 20%;
+  height: 200px;
+  text-align: center;
+  display: block;
+  margin-top: 35px;
+}
+
+#button-box {
+  line-height: 200px;
+}
+
+#button-box > button {
+  margin: 10px;
+}
+
+.home-button {
+  width: 40%;
+  height: 30px;
+  border-radius: 10px;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+#sort-btn {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+#content-box {
+  display: flex;
+  margin: auto;
+  width: 75%;
+  background-color: rgb(255, 247, 231);
+  float: right;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#content-box .img-box {
+  width: 200px;
+  height: 200px;
+  display: block;
+  object-fit: cover;
+  margin: auto;
+  padding: 20px;
+}
+
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.home-title {
+  text-align: center;
+  font-size: 3rem;
+  border: solid black;
+  padding: 20px;
+  margin: 10px auto 10px auto;
+}
