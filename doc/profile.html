@@ -5,14 +5,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/profile.css">
-    <script src="./js/profile.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <script src="../js/api.js"></script>
+    <script src="../js/profile.js"></script>
+    <title>마이페이지</title>
 </head>
 
 <body>
+    <div class="wrap">
+        <header class="Header" id="Header">
+            <div class="container">
+                <h1>술술술</h1>
+            </div>
+            <div class="header_btn">
+                <button type="button" onclick="">마이페이지</button>
+                <button type="button" onclick="">홈으로 가기</button>
+                <button type=" button" onclick="">로그아웃</button>
+            </div>
+        </header>
+        <section class="user_profile">
+            <div class="user_info">
+                <div class="user_id">
+                    <p>아이디 :</p>
+                    <p id="user_id"></p>
+                </div>
+                <div class="nickname">
+                    <p>닉네임 :</p>
+                    <p id="nickname"></p>
+                </div>
+                <div class="fav_alcohol">
+                    <p>주종 :</p>
+                    <p id="fav_alcohol"></p>
+                </div>
+                <div class="amo_alcohol">
+                    <p>주량 :</p>
+                    <p id="amo_alcohol"></p>
+                </div>
+                <div class="profile_img">
+                    <img src="" alt="profile_image" id="profile_image" />
+                </div>
+                <div class="user_follow">
 
+                </div>
+            </div>
+            <div class="user_articles" id="my_articles">
+                <div class="article_card">
+                    <div class="title"></div>
+                    <div class="content"></div>
+                    <img class="image"></img>
+                </div>
+            </div>
+            <div class="user_like_articles" id="like_articles">
+
+            </div>
+            <div class="profile_btn">
+                <button onclick="">수정하기</button>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <ul class="team_name">
+                    <li>
+                        <p>태서경</p>
+                        <i class="xi-github">
+                            <a href="https://github.com/taeseokyoung"></a>
+                        </i>
+                        <i class="xi-pen">
+                            <a href="https://tae-seokyoung.tistory.com/"></a>
+                        </i>
+                    </li>
+                </ul>
+
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
