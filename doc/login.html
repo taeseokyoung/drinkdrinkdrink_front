@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/signin.js"></script>
+    <script src="../js/api.js"></script>
+    <title>SignIn</title>
+
+</head>
+
+<body>
+    <h1>로그인페이지</h1>
+    <form>
+        <input type="text" name="user_id" id="user_id" placeholder="아이디" />
+        <input type="password" name="password" id="password" placeholder="패스워드" />
+        <button type="button" onclick="handleSigninButton()">로그인</button>
+    </form>
+    <button type="button" onclick="handleMock()">모크 api</button>
+    <button type="button" onclick="handleLogout()">로그아웃</button>
+</body>
+
+</html>

@@ -48,9 +48,15 @@ async function handleSignup() {
     }
     )
 
-    if (response.status == 201) {
-        alert("회원가입을 축하합니다!")
-        window.location.replace(`${frontend_base_url}/doc/signin.html`)
-    } else if (response.status == 400) { alert("회원가입에 실패했습니다.") }
-    console.log(response)
 }
+
+async function handleSignupButton() {
+    const response = await handleSignin();
+
+    if (response.statue == 201) {
+        alert("회원가입을 축하합니다!")
+        window.location.replace(`${frontend_base_url}/login.html`)
+    }
+
+}
+
