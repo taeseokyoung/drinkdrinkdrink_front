@@ -4,7 +4,7 @@
 
 //distribution?
 const backend_adress = "https://backend.drinkdrinkdrink.xyz";
-const frontend_adress = "https://drinkdrinkdrink.xyz";
+const frontend_adress = "https://backend.https://drinkdrinkdrink.xyz";
 
 // 홈 이동
 function moveHome() {
