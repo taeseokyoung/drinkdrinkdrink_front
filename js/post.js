@@ -1,6 +1,6 @@
 const frontend_base_url = "http://127.0.0.1:5500/"
 const backend_base_url = "http://127.0.0.1:8000/"
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzODk2MTU2LCJpYXQiOjE2ODM4OTQzNTYsImp0aSI6ImY5ZDRiMzU3YmFlNDRkMmU5NmFlNDQ5YWQxNjQ5MzU0IiwidXNlcl9pZCI6MX0.Zb6UyNOcNlbyXTjNM5jwSbLUi0CkshAzPz3VIhi-ac4"
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzOTgzNTE1LCJpYXQiOjE2ODM5NjU1MTUsImp0aSI6ImI4Y2FhMmE1ZDk3ZTQzNDA5NDE4MTQxNmNkOWExMmMyIiwidXNlcl9pZCI6MX0._cTxZUdrhbh5aXZk7MbV0h6tqFxsyBC5wU7Pk7-LT3c"
 
 window.onload = ()=>{
     console.log("로딩!")
@@ -26,20 +26,21 @@ async function handlePost(){
     const content = document.getElementById("content").value;
     const image = document.getElementById("image").files[0];
     const stars = document.getElementById("stars").value;
-
     const formData = new FormData();
 
 
     formData.append('title', title)
     formData.append('content', content)
-    formData.append('image', image)
     formData.append('stars', stars)
+    if (image){
+        formData.append('image', image)
+    } 
 
     //로컬 스토리지에 토큰을 저장하면 이걸사용
     // let token = localStorage.getItem("access")
-
+    
     if (title&&content){
- 
+        console.log(formData)
         const response = await fetch(`${backend_base_url}/write/`, {
             method: 'POST',
             headers: {
@@ -56,13 +57,14 @@ async function handlePost(){
 
         } else {
             //작성한 내용이 백에 들어가지 않을경우
-            // console.log(response.json())
+            console.log(response.json())
             alert("작성이 취소되었습니다")
         }
 
 
     } else {
         //프론트에서 제목, 내용을 작성하지 않은 경우
+        console.log(response.json())
         alert("빈칸을 작성하세요")
     }
 
