@@ -48,7 +48,6 @@ window.onload = async function () {
   }
 };
 
-
 // 홈 이동
 function moveHome() {
   window.location.replace(`${frontend_base_url}/`);
@@ -56,9 +55,8 @@ function moveHome() {
 
 // 마이페이지 이동
 function moveProfile() {
-  console.log("눌려")
+  console.log("눌려");
   window.location.replace(`${frontend_base_url}/doc/profile.html`);
-
 }
 
 // 글 작성 페이지 이동
@@ -68,7 +66,7 @@ function movePost() {
 
 // 로그인 이동
 function moveSignIn() {
-  window.location.replace(`${frontend_base_url}/doc/signin.html`);
+  window.location.replace(`${frontend_base_url}/doc/login.html`);
 }
 
 // 회원가입 이동
