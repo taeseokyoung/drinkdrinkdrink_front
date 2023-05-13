@@ -1,8 +1,3 @@
-let token = localStorage.getItem("payload")
-const payload_parse = JSON.parse(token);
-const user_num = payload_parse.user_id
-
-
 function moveDetail(article_id) {
   window.location.href = `${frontend_base_url}/doc/detail.html?article_id=${article_id}`;
 }
