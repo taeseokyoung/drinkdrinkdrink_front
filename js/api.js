@@ -3,26 +3,6 @@ const backend_base_url = "http://127.0.0.1:8000"
 const no_image =
     "https://usagi-post.com/wp-content/uploads/2020/05/no-image-found-360x250-1.png";
 
-async function handleSignup() {
-    const email = document.getElementById("email").value
-    const password = document.getElementById("password").value
-    console.log(email, password)
-
-    const response = await fetch(`${backend_base_url}/users/signup/`, {
-        headers: {
-            "content-type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify({
-            "email": email,
-            "password": password
-        })
-    })
-
-    return response
-
-}
-
 
 async function handleLogin() {
     // console.log("눌러지고있다")
