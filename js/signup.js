@@ -1,4 +1,5 @@
-const frontend_base_url = "http://127.0.0.1:5500";
+// const frontend_base_url = "http://127.0.0.1:5500";
+const frontend_base_url = "https://drinkdrinkdrink.xyz";
 const backend_base_url = "https://backend.drinkdrinkdrink.xyz";
 
 function readURL(input) {
