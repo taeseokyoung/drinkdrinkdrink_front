@@ -17,7 +17,7 @@ async function handleSigninButton() {
 
         localStorage.setItem("payload", jsonPayload);
         alert(`환영합니다! :)`)
-        window.location.replace(`${frontend_base_url}/doc/profile.html`)
+        window.location.replace(`${frontend_base_url}/`)
     }
     else {
         alert("회원정보가 일치하지 않습니다.")
