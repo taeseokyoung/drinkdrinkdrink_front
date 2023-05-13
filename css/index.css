@@ -1,0 +1,43 @@
+.home-title {
+  text-align: center;
+  border: solid black;
+}
+
+#profile-box {
+  border: solid black;
+  float: left;
+  width: 20%;
+  height: 300px;
+  text-align: center;
+}
+
+#button-box {
+  line-height: 300px;
+}
+
+.home-button {
+  width: 40%;
+  height: 30px;
+  border-radius: 10px;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+#content-box {
+  display: flex;
+  margin: auto;
+  width: 75%;
+  background-color: rgb(255, 247, 231);
+  float: right;
+}
+
+#content-box .img-box {
+  width: 200px;
+  height: 200px;
+  display: block;
+  object-fit: cover;
+  margin: auto;
+}
