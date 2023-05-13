@@ -127,16 +127,3 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-.container {
-  width: 1000px;
-  margin: 0 auto;
-}
-
-.home-title {
-  text-align: center;
-  font-size: 3rem;
-  border: solid black;
-  padding: 20px;
-  margin: 10px auto 10px auto;
-}
