@@ -9,10 +9,15 @@
   width: 20%;
   height: 300px;
   text-align: center;
+  display: block;
 }
 
 #button-box {
   line-height: 300px;
+}
+
+#button-box > button {
+  margin: 10px;
 }
 
 .home-button {
@@ -24,6 +29,11 @@
   cursor: pointer;
   font-size: 1em;
   font-weight: 600;
+}
+
+#sort-btn {
+  text-align: right;
+  margin-bottom: 10px;
 }
 
 #content-box {
