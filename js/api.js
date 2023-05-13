@@ -1,5 +1,5 @@
-const frontend_base_url = "https://backend.drinkdrinkdrink.xyz";
-const backend_base_url = "https://drinkdrinkdrink.xyz";
+const frontend_base_url = "https://drinkdrinkdrink.xyz";
+const backend_base_url = "https://backend.drinkdrinkdrink.xyz";
 const no_image =
   "https://usagi-post.com/wp-content/uploads/2020/05/no-image-found-360x250-1.png";
 
