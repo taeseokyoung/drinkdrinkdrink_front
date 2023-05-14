@@ -13,7 +13,6 @@ async function getComments(articleId) {
 }
 
 window.onload = async function () {
-  console.log(payload_parse)
   // 게시글 받아오기
   const article = await getArticle(articleId);
   // 댓글 받아오기
@@ -21,7 +20,7 @@ window.onload = async function () {
 
   // 내용 가져오기
   document.getElementById("detail-title").innerText = article.title;
-  document.getElementById("detail-user").innerText = article.user;
+  document.getElementById("detail-user").innerText = article.nickname;
   document.getElementById("detail-time").innerText = article.created_at.substr(
     0,
     10
@@ -53,9 +52,8 @@ window.onload = async function () {
   document.getElementById(
     "likes-btn"
   ).innerText = `좋아요 ${article.likes.length}`;
-  console.log(article.user_id, article)
   // 로그인 한 유저랑 글 작성 유저랑 같을 때
-  if (payload_parse.id == article.id) {
+  if (payload_parse.user_id == article.user) {
     const editBtn = document.createElement("button");
     editBtn.setAttribute("id", "edit-btn");
     editBtn.setAttribute("onclick", `moveEdit(${articleId})`);
@@ -71,14 +69,14 @@ window.onload = async function () {
     commentBox.setAttribute("class", "comment-content-box");
     const commentUser = document.createElement("div");
     commentUser.setAttribute("class", "comment-user");
-    commentUser.innerText = comment.user;
+    commentUser.innerText = comment.nickname;
     const commentContent = document.createElement("div");
     commentContent.setAttribute("id", `comment-content-${comment.id}`);
     commentContent.innerText = comment.content;
     commentsBox.append(commentBox);
     commentBox.append(commentUser, commentContent);
 
-    if (comment.user == payload_parse.identify) {
+    if (comment.user == payload_parse.user_id) {
       const deleteBtn = document.createElement("button");
       deleteBtn.setAttribute("onclick", `commentDelete(${comment.id})`);
       deleteBtn.innerText = "삭제";

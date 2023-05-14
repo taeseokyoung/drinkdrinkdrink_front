@@ -4,6 +4,7 @@ function moveDetail(article_id) {
 
 window.onload = async function () {
   articles = await getArticles();
+  console.log(articles);
 
   const contentBox = document.getElementById("content-box");
 
