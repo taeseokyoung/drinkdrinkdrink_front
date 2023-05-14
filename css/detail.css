@@ -38,7 +38,7 @@
 #detail-stars,
 #detail-content,
 #comment-title,
-#comment-content-box {
+.comment-content-box {
   border: solid 1px black;
   padding: 10px;
   margin-top: 5px;
@@ -67,4 +67,9 @@
 
 #comment-box {
   margin-bottom: 30px;
+}
+
+.comment-content-box > div,
+.comment-content-box > button {
+  margin-top: 10px;
 }

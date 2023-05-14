@@ -72,7 +72,6 @@ function moveHome() {
 }
 
 // 아티클 detail 가져오기
-
 async function getArticle(e) {
   const response = await fetch(`${backend_base_url}/${e}`);
 
@@ -94,4 +93,41 @@ async function getArticles() {
   } else {
     alert("불러오기 실패!");
   }
+}
+
+// 버튼 눌렀을 시 정렬
+async function handleArticles(e) {
+  let btn_id = e.id;
+  let tag = "/";
+
+  if (btn_id == "stars-btn") {
+    tag = "/?order=stars";
+  } else if (btn_id == "likes-btn") {
+    tag = "/?order=likes";
+  }
+
+  const response = await fetch(`${backend_base_url}${tag}`);
+  const response_json = await response.json();
+
+  console.log(response_json);
+
+  const contentBox = document.getElementById("content-box");
+  const images = document.getElementsByClassName("img-box");
+
+  for (let i = images.length - 1; i >= 0; i--) {
+    images[i].remove();
+  }
+
+  response_json.forEach((article) => {
+    const imageBox = document.createElement("img");
+    imageBox.setAttribute("class", "img-box");
+    imageBox.setAttribute("onclick", "moveDetail()");
+
+    if (article.image) {
+      imageBox.setAttribute("src", `${backend_base_url}${article.image}`);
+    } else {
+      imageBox.setAttribute("src", `${no_image}`);
+    }
+    contentBox.append(imageBox);
+  });
 }
