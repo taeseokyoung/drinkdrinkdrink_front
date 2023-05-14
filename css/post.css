@@ -19,3 +19,8 @@ header {
     text-align: center;
 }
 
+#img-edit-alert {
+  margin-bottom: 10px;
+  background-color: yellow;
+  width: 350px;
+}

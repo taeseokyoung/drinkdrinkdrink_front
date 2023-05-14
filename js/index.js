@@ -4,7 +4,6 @@ function moveDetail(article_id) {
 
 window.onload = async function () {
   articles = await getArticles();
-  console.log(articles);
 
   const contentBox = document.getElementById("content-box");
 
@@ -22,10 +21,8 @@ window.onload = async function () {
   });
 
   const buttonBox = document.getElementById("button-box");
-  const profileBox = document.getElementById("profile-box");
-  const payload = localStorage.getItem("payload");
-  const payload_parse = JSON.parse(payload);
 
+  // 로그인 되어있을 때
   if (payload_parse) {
     const myPageButton = document.createElement("button");
     myPageButton.setAttribute("onclick", "moveProfile()");
@@ -35,7 +32,14 @@ window.onload = async function () {
     const myWriteButton = document.createElement("button");
     myWriteButton.setAttribute("onclick", "movePost()");
     myWriteButton.innerText = "글쓰기";
-    profileBox.append(myWriteButton);
+    buttonBox.append(myWriteButton);
+
+    const myLogOutButton = document.createElement("button");
+    myLogOutButton.setAttribute("onclick", "handleLogout()");
+    myLogOutButton.innerText = "로그아웃";
+    buttonBox.append(myLogOutButton);
+
+    // 로그인 되어있지 않을 때
   } else {
     const mySigninButton = document.createElement("button");
     mySigninButton.setAttribute("onclick", "moveSignIn()");
@@ -48,4 +52,17 @@ window.onload = async function () {
   }
 };
 
+// 글 작성 페이지 이동
+function movePost() {
+  window.location.replace(`${frontend_base_url}/doc/post.html`);
+}
 
+// 로그인 이동
+function moveSignIn() {
+  window.location.replace(`${frontend_base_url}/doc/login.html`);
+}
+
+// 회원가입 이동
+function moveSignUp() {
+  window.location.replace(`${frontend_base_url}/doc/signup.html`);
+}

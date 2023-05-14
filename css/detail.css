@@ -19,3 +19,91 @@ header {
     text-align: center;
 }
 
+.home-title {
+  text-align: center;
+  font-size: 3rem;
+  border: solid black;
+  padding: 20px;
+  margin: 10px auto 10px auto;
+}
+
+#detail-box,
+#edit-box,
+#likes-box,
+#comment-write-box,
+#comment-box {
+  background-color: beige;
+  border: solid 3px darkred;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+#detail-box,
+#likes-box,
+#comment-write-box {
+  text-align: center;
+}
+
+#edit-box {
+  text-align: right;
+}
+
+#detail-title,
+#detail-user-box,
+#detail-img,
+#detail-stars,
+#detail-content,
+#comment-title,
+.comment-content-box {
+  border: solid 1px black;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+#detail-title {
+  text-decoration: underline;
+  font-size: 1.5rem;
+}
+
+#detail-user {
+  display: inline-block;
+  background-color: red;
+  margin-right: 800px;
+}
+
+#detail-time {
+  background-color: red;
+  display: inline-block;
+}
+
+#detail-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.img-box {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#comment-write {
+  width: 800px;
+  padding: 10px;
+}
+
+#comment-box {
+  margin-bottom: 30px;
+}
+
+.comment-content-box > div,
+.comment-content-box > button,
+.comment-content-box > textarea {
+  margin-top: 10px;
+}
+
+.comment-content-box > textarea {
+  margin-left: 10px;
+}
