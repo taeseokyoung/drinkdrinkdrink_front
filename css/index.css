@@ -1,7 +1,8 @@
 .header_btn {
     width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 30px auto;
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     text-align: right;
 }
@@ -10,7 +11,6 @@ header {
     font-size: 31px;
     font-weight: 500;
     line-height: 100px;
-    margin-bottom: 30px;
 }
 
 #profile-box {

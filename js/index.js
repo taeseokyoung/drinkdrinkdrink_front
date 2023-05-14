@@ -22,6 +22,7 @@ window.onload = async function () {
   });
 
   const buttonBox = document.getElementById("button-box");
+  const headerButtonBox = document.getElementById("mypage_btn");
 
   // 로그인 되어있을 때
   if (payload_parse) {
@@ -34,6 +35,11 @@ window.onload = async function () {
     myLogOutButton.setAttribute("onclick", "handleLogout()");
     myLogOutButton.innerText = "로그아웃";
     buttonBox.append(myLogOutButton);
+
+    const myPageButton = document.createElement("button");
+    myPageButton.setAttribute("onclick", "moveProfile()");
+    myPageButton.innerText = "마이페이지";
+    headerButtonBox.append(myPageButton);
 
     // 로그인 되어있지 않을 때
   } else {
