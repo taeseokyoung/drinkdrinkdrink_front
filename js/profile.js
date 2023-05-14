@@ -1,5 +1,3 @@
-let token = localStorage.getItem("payload")
-const payload_parse = JSON.parse(token);
 const user_num = payload_parse.user_id
 
 window.onload = async function () {
@@ -8,14 +6,14 @@ window.onload = async function () {
     response_json = await response.json()
     // console.log(response_json)
 
-    const user_id = document.getElementById("user_id")
+    const identify = document.getElementById("identify")
     const nickname = document.getElementById("nickname")
     const profile_img = document.getElementById("profile_img")
     const fav_alcohol = document.getElementById("fav_alcohol")
     const amo_alcohol = document.getElementById("amo_alcohol")
     // const password = document.getElementById("password")
 
-    user_id.innerText = response_json['user_id']
+    identify.innerText = response_json['identify']
     nickname.innerText = response_json['nickname']
 
 
@@ -25,46 +23,36 @@ window.onload = async function () {
     fav_alcohol.innerText = response_json['fav_alcohol']
     amo_alcohol.innerText = response_json['amo_alcohol']
 
-
-
-    // user_articl
-
-    const articles = response_json['my_articles']
+    let articles = response_json['my_articles']
     console.log(articles)
 
-    for (i = 0; i < articles.length; i++) {
-        const card = docume.getElementById("article_card")
-        const title = document.createElement("div")
-        title.setAttribute("class", "title")
-        const content = document.createElement("div")
-        content.setAttribute("class", "content")
-        const image = document.createElement("div")
-        image.setAttribute("img", "image")
-        image.setAttribute("onclick", "image")
-        card.appendChild(title)
-        card.appendChild(content)
-        card.appendChild(image)
+    articles.forEach(article => {
 
-        articles[i]
-    }
+        if (article) {
+            const card = document.createElement("div")
+            card.setAttribute("id", "article_card")
 
-    // articles.forEach((article) => {
-    //     if (article) {
-    //         const card = docume.getElementById("article_card")
-    //         const title = document.createElement("div")
-    //         title.setAttribute("class", "title")
-    //         const content = document.createElement("div")
-    //         content.setAttribute("class", "content")
-    //         const image = document.createElement("div")
-    //         image.setAttribute("img", "image")
-    //         image.setAttribute("onclick", "image")
-    //         card.appendChild(title)
-    //         card.appendChild(content)
-    //         card.appendChild(image)
-    //     }
-    // })
+            const title = document.createElement("p")
+            title.setAttribute("class", "title")
+            title.textContent = article.title
+
+            const content = document.createElement("p")
+            content.setAttribute("class", "content")
+            content.textContent = article.content
+
+            const image = document.createElement("img")
+            image.setAttribute("img", "image")
+            image.setAttribute("src", `${backend_base_url}${article.image}`)
+            // image.setAttribute("onclick", "image")
+
+            image.textContent = article.image
+            card.append(title, content)
+        }
+
+    })
 
 
+    // 지현님예시코드
     // articles.forEach((article) => {
     //     const imageBox = document.createElement("img");
     //     imageBox.setAttribute("class", "img-box");
