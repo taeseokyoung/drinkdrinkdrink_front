@@ -3,10 +3,13 @@ const backend_base_url = "http://127.0.0.1:8000"
 const no_image =
     "https://usagi-post.com/wp-content/uploads/2020/05/no-image-found-360x250-1.png";
 
+let token = localStorage.getItem("payload")
+const payload_parse = JSON.parse(token);
+
 
 async function handleLogin() {
     // console.log("눌러지고있다")
-    const user_id = document.getElementById("user_id").value
+    const identify = document.getElementById("identify").value
     const password = document.getElementById("password").value
 
     const response = await fetch(`${backend_base_url}/users/login/`, {
@@ -15,7 +18,7 @@ async function handleLogin() {
         },
         method: "POST",
         body: JSON.stringify({
-            "user_id": user_id,
+            "identify": identify,
             "password": password
         })
     });
@@ -56,7 +59,7 @@ async function handleProfile() {
         },
         method: "POST",
         body: JSON.stringify({
-            "user_id": user_id,
+            "identify": identify,
             "password": password
         })
     });
@@ -111,4 +114,32 @@ async function handleArticles(e) {
         }
         contentBox.append(imageBox);
     });
+}
+
+
+// 홈 이동
+function moveHome() {
+    window.location.replace(`${frontend_base_url}/`);
+}
+
+// 마이페이지 이동
+function moveProfile() {
+    console.log("눌려")
+    window.location.replace(`${frontend_base_url}/doc/profile.html`);
+
+}
+
+// 글 작성 페이지 이동
+function movePost() {
+    window.location.replace(`${frontend_base_url}/doc/post.html`);
+}
+
+// 로그인 이동
+function moveSignIn() {
+    window.location.replace(`${frontend_base_url}/doc/signin.html`);
+}
+
+// 회원가입 이동
+function moveSignUp() {
+    window.location.replace(`${frontend_base_url}/doc/signup.html`);
 }

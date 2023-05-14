@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/post.css">
-    <script src="../js/post.js"></script>
-    <title>게시물 작성 페이지</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/post.css">
+  <script src="../js/post.js"></script>
+  <title>게시물 작성 페이지</title>
+</head>
 
-  <body>
-    <header></header>
-    <h2>새 게시물 작성</h2>
-    <!-- form 형식만 사용 -->
-    <form>
-      <fieldset class="postField" name="postField" id="postField">
-        <legend>술술술 게시물</legend>
-        제목 :
-        <input type="text" name="title" id="title" placeholder="제목을 입력해주세요" required="required"/><br><br>
-        내용 :
-        <input type="textarea" name="content" id="content" placeholder="내용을 입력해주세요"/><br><br>
-        사진 :
-        <input type="file" id="image" onchange="readURL(this);">
-        <img id="preview"/><br><br>
-        별점 :
-        <select name="stars" id="stars">
-          <option value="1">⭐️</option>
-          <option value="2">⭐️⭐️</option>
-          <option value="3" selected="selected">⭐️⭐️⭐️</option>
-          <option value="4">⭐️⭐️⭐️⭐️</option>
-          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-        </select>
+<body>
+  <header class="Header" id="Header">
+    <div class="container">
+      <h1>술술술</h1>
+    </div>
+    <div class="header_btn">
+      <button type="button" onclick="moveProfile()">마이페이지</button>
+      <button type="button" onclick="moveHome()">홈으로 가기</button>
+      <!-- <button type="button" onclick="">로그아웃</button> -->
+    </div>
+  </header>
+  <h2>새 게시물 작성</h2>
+  <!-- form 형식만 사용 -->
+  <form>
+    <fieldset class="postField" name="postField" id="postField">
+      <legend>술술술 게시물</legend>
+      제목 :
+      <input type="text" name="title" id="title" placeholder="제목을 입력해주세요" required="required" /><br><br>
+      내용 :
+      <input type="textarea" name="content" id="content" placeholder="내용을 입력해주세요" /><br><br>
+      사진 :
+      <input type="file" id="image" onchange="readURL(this);">
+      <img id="preview" /><br><br>
+      별점 :
+      <select name="stars" id="stars">
+        <option value="1">⭐️</option>
+        <option value="2">⭐️⭐️</option>
+        <option value="3" selected="selected">⭐️⭐️⭐️</option>
+        <option value="4">⭐️⭐️⭐️⭐️</option>
+        <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+      </select>
 
-        <button type="button" onclick="handlePost()">저장</button>
-      </fieldset>
-    </form>
-  </body>
+      <button type="button" onclick="handlePost()">저장</button>
+    </fieldset>
+  </form>
+  <footer>
+    <div class="container">
+      <ul class="team_name">
+        <li>
+          <p>A5A조 술술술 프로젝트</p>
+          <a href="https://github.com/taeseokyoung/drinkdrinkdrink"><i class="xi-github"></i></a>
+          <a href="https://tae-seokyoung.tistory.com/"><i class="xi-pen"></i></a>
+        </li>
+      </ul>
+
+    </div>
+  </footer>
+</body>
 
 </html>
