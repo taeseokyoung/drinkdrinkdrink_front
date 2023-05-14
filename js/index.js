@@ -52,11 +52,6 @@ window.onload = async function () {
   }
 };
 
-// 마이페이지 이동
-function moveProfile() {
-  window.location.replace(`${frontend_base_url}/doc/profile.html`);
-}
-
 // 글 작성 페이지 이동
 function movePost() {
   window.location.replace(`${frontend_base_url}/doc/post.html`);

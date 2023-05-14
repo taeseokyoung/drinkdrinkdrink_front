@@ -1,13 +1,12 @@
 const frontend_base_url = "http://127.0.0.1:5500";
 const backend_base_url = "http://127.0.0.1:8000";
-const no_image =
-  "https://usagi-post.com/wp-content/uploads/2020/05/no-image-found-360x250-1.png";
-const payload = localStorage.getItem("payload");
-const payload_parse = JSON.parse(payload);
+const no_image = "https://usagi-post.com/wp-content/uploads/2020/05/no-image-found-360x250-1.png";
+
+let token = localStorage.getItem("payload")
+const payload_parse = JSON.parse(token);
 
 async function handleLogin() {
-  // console.log("눌러지고있다")
-  const user_id = document.getElementById("user_id").value;
+  const identify = document.getElementById("identify").value;
   const password = document.getElementById("password").value;
 
   const response = await fetch(`${backend_base_url}/users/login/`, {
@@ -16,8 +15,8 @@ async function handleLogin() {
     },
     method: "POST",
     body: JSON.stringify({
-      user_id: user_id,
-      password: password,
+      "identify" : identify,
+      "password" : password,
     }),
   });
   return response;
@@ -57,8 +56,8 @@ async function handleProfile() {
       },
       method: "POST",
       body: JSON.stringify({
-        user_id: user_id,
-        password: password,
+        "identify": identify,
+        "password": password
       }),
     }
   );
@@ -69,6 +68,13 @@ async function handleProfile() {
 // 홈 이동
 function moveHome() {
   window.location.replace(`${frontend_base_url}/`);
+}
+
+// 마이페이지 이동
+function moveProfile() {
+    console.log("눌려")
+    window.location.replace(`${frontend_base_url}/doc/profile.html`);
+
 }
 
 // 아티클 detail 가져오기
@@ -123,6 +129,7 @@ async function handleArticles(e) {
     imageBox.setAttribute("class", "img-box");
     imageBox.setAttribute("onclick", "moveDetail()");
 
+
     if (article.image) {
       imageBox.setAttribute("src", `${backend_base_url}${article.image}`);
     } else {
@@ -130,4 +137,3 @@ async function handleArticles(e) {
     }
     contentBox.append(imageBox);
   });
-}

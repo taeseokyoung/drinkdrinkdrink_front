@@ -20,67 +20,51 @@
                 <h1>술술술</h1>
             </div>
             <div class="header_btn">
-                <button type="button" onclick="">마이페이지</button>
-                <button type="button" onclick="">홈으로 가기</button>
-                <button type=" button" onclick="">로그아웃</button>
+                <button type="button" onclick="moveProfile()">마이페이지</button>
+                <button type="button" onclick="moveHome()">홈으로 가기</button>
+                <!-- <button type="button" onclick="">로그아웃</button> -->
             </div>
         </header>
-        <section class="user_profile">
+
+        <section class="user_profile container flex">
             <div class="user_info">
-                <div class="user_id">
-                    <p>아이디 :</p>
-                    <p id="user_id"></p>
-                </div>
-                <div class="nickname">
-                    <p>닉네임 :</p>
+                <div class="profile_text">
+                    <p id="identify"></p>
                     <p id="nickname"></p>
+                    <div class="fav_alcohol">
+                        <span>주종 :</span>
+                        <p id="fav_alcohol"></p>
+                    </div>
+                    <div class="amo_alcohol">
+                        <span>주량 :</span>
+                        <p id="amo_alcohol"></p>
+                    </div>
+                    <div class="user_follow"></div>
                 </div>
-                <div class="fav_alcohol">
-                    <p>주종 :</p>
-                    <p id="fav_alcohol"></p>
-                </div>
-                <div class="amo_alcohol">
-                    <p>주량 :</p>
-                    <p id="amo_alcohol"></p>
-                </div>
-                <div class="profile_img">
-                    <img src="" alt="profile_image" id="profile_image" />
-                </div>
-                <div class="user_follow">
-
-                </div>
-            </div>
-            <div class="user_articles" id="my_articles">
-                <div class="article_card">
-                    <div class="title"></div>
-                    <div class="content"></div>
-                    <img class="image"></img>
+                <div class="profile_img" id="profile_img"></div>
+                <div class="profile_btn">
+                    <button onclick="">수정하기</button>
                 </div>
             </div>
-            <div class="user_like_articles" id="like_articles">
-
-            </div>
-            <div class="profile_btn">
-                <button onclick="">수정하기</button>
+            <div class="user_arti">
+                <div class="user_articles" id="my_articles"></div>
+                <!-- <div class="user_like_articles" id="like_articles"></div> -->
             </div>
         </section>
         <footer>
             <div class="container">
                 <ul class="team_name">
                     <li>
-                        <p>태서경</p>
-                        <i class="xi-github">
-                            <a href="https://github.com/taeseokyoung"></a>
-                        </i>
-                        <i class="xi-pen">
-                            <a href="https://tae-seokyoung.tistory.com/"></a>
-                        </i>
+                        <p>A5A조 술술술 프로젝트</p>
+                        <a href="https://github.com/taeseokyoung/drinkdrinkdrink"><i class="xi-github"></i></a>
+                        <a href="https://tae-seokyoung.tistory.com/"><i class="xi-pen"></i></a>
                     </li>
                 </ul>
 
             </div>
         </footer>
     </div>
+
 </body>
 
 </html>
