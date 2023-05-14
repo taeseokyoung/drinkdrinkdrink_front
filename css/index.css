@@ -9,7 +9,7 @@
 }
 
 #button-box {
-  line-height: 200px;
+  line-height: 100px;
 }
 
 #button-box > button {
@@ -50,7 +50,6 @@
   margin: auto;
   padding: 20px;
 }
-
 
 .container {
   width: 1000px;

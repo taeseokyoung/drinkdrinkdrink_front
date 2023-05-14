@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/detail.css" />
+    <script src="../js/detail.js"></script>
+    <script src="../js/api.js"></script>
+    <title>상세 게시글</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../css/common.css" />
-  <link rel="stylesheet" href="../css/index.css" />
-  <script src="../js/detail.js"></script>
-  <title>상세 게시글</title>
-</head>
-
-<body>
-  <div class="container">
-    <h1 class="home-title" onclick="moveHome()">술술술</h1>
-  </div>
-</body>
-
+  <body>
+    <div class="container">
+      <h1 class="home-title" onclick="moveHome()">술술술</h1>
+      <div id="detail-box">
+        <div id="detail-title">제목</div>
+        <div id="detail-user-box">
+          <div id="detail-user">유저</div>
+          <div id="detail-time">수정 시간</div>
+        </div>
+        <div id="detail-img"></div>
+        <div id="detail-stars">별점</div>
+        <div id="detail-content">내용</div>
+      </div>
+      <div id="edit-box"></div>
+      <div id="likes-box">
+        <button id="likes-btn" onclick="handleLike()">좋아요</button>
+      </div>
+      <div id="comment-write-box">
+        <textarea id="comment-write" placeholder="댓글 작성"></textarea>
+        <button id="comment-submit" onclick="commentSubmit()">제출</button>
+      </div>
+      <div id="comment-box">
+        <div id="comment-title">댓글</div>
+        <div id="comment-content-box">
+          <div id="comment-content">내용</div>
+          <div id="comment-btn-wrap">버튼</div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
