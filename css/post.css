@@ -1,4 +1,10 @@
 fieldset {
-    width: 10;
-    /* 와이 적용이 안되는거...ㅠㅠ */
+  width: 10;
+  /* 와이 적용이 안되는거...ㅠㅠ */
+}
+
+#img-edit-alert {
+  margin-bottom: 10px;
+  background-color: yellow;
+  width: 350px;
 }

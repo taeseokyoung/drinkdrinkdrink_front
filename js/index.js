@@ -4,7 +4,6 @@ function moveDetail(article_id) {
 
 window.onload = async function () {
   articles = await getArticles();
-  console.log(articles);
 
   const contentBox = document.getElementById("content-box");
 
@@ -55,7 +54,6 @@ window.onload = async function () {
 
 // 마이페이지 이동
 function moveProfile() {
-  console.log("눌려");
   window.location.replace(`${frontend_base_url}/doc/profile.html`);
 }
 

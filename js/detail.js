@@ -18,7 +18,6 @@ window.onload = async function () {
   const article = await getArticle(articleId);
   // 댓글 받아오기
   const comments = await getComments(articleId);
-  console.log(comments);
 
   // 내용 가져오기
   document.getElementById("detail-title").innerText = article.title;
@@ -77,13 +76,18 @@ window.onload = async function () {
     commentContent.setAttribute("id", `comment-content-${comment.id}`);
     commentContent.innerText = comment.content;
     commentsBox.append(commentBox);
-    commentBox.append(commentUser);
-    commentBox.append(commentContent);
+    commentBox.append(commentUser, commentContent);
+
     if (comment.user == payload_parse.user_id) {
+      const deleteBtn = document.createElement("button");
+      deleteBtn.setAttribute("onclick", `commentDelete(${comment.id})`);
+      deleteBtn.innerText = "삭제";
       const editBtn = document.createElement("button");
-      editBtn.setAttribute("onclick", `commentDelete(${comment.id})`);
-      editBtn.innerText = "삭제";
-      commentBox.append(editBtn);
+      editBtn.setAttribute("onclick", `commentEdit(${comment.id})`);
+      editBtn.setAttribute("id", `comment-edit-button-${comment.id}`);
+      editBtn.innerText = "수정";
+
+      commentBox.append(deleteBtn, editBtn);
     }
   });
 };
@@ -134,7 +138,6 @@ async function commentSubmit() {
 
 // 코멘트 삭제
 async function commentDelete(comment_id) {
-  // const commentBox
   const response = await fetch(
     `${backend_base_url}/${articleId}/comments/${comment_id}`,
     {
@@ -152,97 +155,47 @@ async function commentDelete(comment_id) {
   location.reload();
 }
 
-// // 코멘트 등록
-// async function postComment(articleId, newComment) {
-//   const response = await fetch(`${articleId}/comments/`, {
-//     method: "POST",
-//     headers: {
-//       "content=type": "application/json",
-//       Authorization: `Bearer ${token}`,
-//     },
-//     body: JSON.stringify({
-//       content: newComment,
-//     }),
-//   });
-//   if (response.status == 200) {
-//     response_json = await response.json();
-//     return response_json;
-//   } else {
-//     alert(response.status);
-//   }
-// }
-// function handleDelete(e) {
-//   const singleItem = document.getElementById(e.id).parentElement;
-//   singleItem.remove();
-// }
+// 코멘트 수정
+function commentEdit(comment_id) {
+  const inText = document.getElementById(
+    `comment-content-${comment_id}`
+  ).innerText;
 
-// // 코멘트 로드
-// async function loadComments(articleId) {
-//   const response = await getComments(articleId);
-//   const commentList = document.getElementById("comment-list");
-//   commentList.innerHTML = "";
-//   response.forEach((comment) => {
-//     commentList.innerHTML += ``;
-//   });
-// }
+  // 인풋박스 만들어서 내용 넣어주기
+  const commentBox = document.getElementById(
+    `comment-content-${comment_id}`
+  ).parentElement;
 
-// //코멘트 제출
-// async function submitComment(articleId, newComment) {
-//   const commentElement = document.getElementById("new-comment");
-//   const newComment = commentElement.value;
-//   const response = await postComment(articleId, newComment);
-//   commentElement.value = "";
-//   loadComments(articleId);
-// }
-// // 수정버튼
-// function handleUpdate(e) {
-//   const singleItem = document.getElementById(e.id).previousSibling;
-//   singleItem.style.visibility = "hidden";
-//   const updateInput = document.createElement("input");
-//   updateInput.setAttribute("id", "update-input");
-//   updateInput.value = singleItem.innerHTML;
+  const inputBox = document.createElement("textarea");
+  inputBox.setAttribute("id", "comment-edit");
+  inputBox.value = inText;
 
-//   singleItem.parentNode.insertBefore(updateInput, singleItem);
-//   const updateButton = document.getElementById(e.id);
-//   updateButton.setAttribute("onclick", "handleUpdateConfirm(this)");
-// }
-// //제출버튼만들기
-// function handleUpdateConfirm(e) {
-//   const updateInput = document.getElementById("update-input");
-//   const singleItem = document.getElementById(e.id).previousSibling;
-//   singleItem.innerHTML = updateInput.value;
-//   singleItem.style.visibility = "visible";
-//   const updateButton = document.getElementById(e.id);
+  commentBox.append(inputBox);
 
-//   updateButton.setAttribute("onclick", "handleUpdate(this)");
-//   updateInput.remove();
-// }
+  const editBtn = document.getElementById(`comment-edit-button-${comment_id}`);
+  editBtn.setAttribute("onclick", `commentEditSubmit(${comment_id})`);
+}
 
-// //댓글 등록하면 화면에 띄워지기
-// function addItem() {
-//   const itemInput = document.getElementById("item-input");
-//   const content = itemInput.value;
-//   if (content) {
-//     const myList = document.getElementById("my-list");
-//     let list_number = myList.getElementsByTagName("li").length + 1;
-//     const newList = document.createElement("li");
-//     newList.innerText = content;
-//     newList.setAttribute("onclick", "handleSingleClick(this)");
-//     newList.setAttribute("id", `${list_number}th-item`);
-//     myList.append(newList);
-//     itemInput.value = "";
-//   } else {
-//     alert("값을 입력하세요");
-//   }
-// }
-
-// //삭제버튼 만들기
-// const deleteButton = document.createElement("button");
-// deleteButton.innerHTML = "삭제";
-// deleteButton.setAttribute("onclick", "handleDelete(this)");
-// deleteButton.setAttribute("id", `${list_number}th-item-delete-button`);
-// newList.appendChild(deleteButton);
-
-// window.onload = async function () {
-//   await loadComments(articleId);
-// };
+// 코멘트 수정한거 제출
+async function commentEditSubmit(comment_id) {
+  const content = document.getElementById("comment-edit").value;
+  const response = await fetch(
+    `${backend_base_url}/${articleId}/comments/${comment_id}/`,
+    {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        content: content,
+      }),
+    }
+  );
+  if (response.status == 200) {
+    alert("댓글이 수정되었습니다!");
+  } else {
+    alert("댓글 수정에 실패했습니다.");
+  }
+  location.reload();
+}

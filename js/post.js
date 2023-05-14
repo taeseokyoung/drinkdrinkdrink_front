@@ -11,8 +11,10 @@ window.onload = async function () {
     const pageTitle = document.getElementById("page-title");
     pageTitle.innerText = "게시물 편집";
 
+    const imageEditAlert = document.getElementById("img-edit-alert");
+    imageEditAlert.innerText = "! 이미지 업로드 시 기존 이미지가 대체됩니다.";
+
     const article = await getArticle(articleId);
-    console.log(article);
 
     const title = document.getElementById("title");
     const content = document.getElementById("content");
@@ -21,8 +23,6 @@ window.onload = async function () {
     title.value = article.title;
     content.value = article.content;
     stars.value = article.stars;
-
-    document.getElementById("preview").src = article.image;
   }
 };
 
@@ -76,6 +76,44 @@ async function handlePost() {
   } else {
     //프론트에서 제목, 내용을 작성하지 않은 경우
     //console.log(response.json())
+    alert("빈칸을 작성하세요");
+  }
+}
+
+async function handlePostEdit() {
+  const title = document.getElementById("title").value;
+  const content = document.getElementById("content").value;
+  const image = document.getElementById("image").files[0];
+  const stars = document.getElementById("stars").value;
+  const formData = new FormData();
+
+  formData.append("title", title);
+  formData.append("content", content);
+  formData.append("stars", stars);
+  if (image) {
+    formData.append("image", image);
+  }
+
+  //로컬 스토리지에 토큰을 저장하면 이걸사용
+  if (title && content) {
+    console.log(formData);
+    const response = await fetch(`${backend_base_url}/${articleId}/`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    });
+
+    if (response.status == 200) {
+      alert("게시글 수정 완료!");
+      window.location.replace(
+        `${frontend_base_url}/doc/detail.html?article_id=${articleId}`
+      );
+    } else {
+      alert("작성이 취소되었습니다");
+    }
+  } else {
     alert("빈칸을 작성하세요");
   }
 }
