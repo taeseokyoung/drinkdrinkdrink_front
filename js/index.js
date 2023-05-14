@@ -24,11 +24,6 @@ window.onload = async function () {
 
   // 로그인 되어있을 때
   if (payload_parse) {
-    const myPageButton = document.createElement("button");
-    myPageButton.setAttribute("onclick", "moveProfile()");
-    myPageButton.innerText = "마이 페이지";
-    buttonBox.append(myPageButton);
-
     const myWriteButton = document.createElement("button");
     myWriteButton.setAttribute("onclick", "movePost()");
     myWriteButton.innerText = "글쓰기";

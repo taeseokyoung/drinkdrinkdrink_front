@@ -1,4 +1,3 @@
-let token = localStorage.getItem("access");
 const urlParams = new URLSearchParams(window.location.search);
 const articleId = urlParams.get("article_id");
 
