@@ -70,3 +70,4 @@ window.onload = async function () {
 
         }
     })
+}

@@ -13,8 +13,6 @@ header {
     margin-bottom: 30px;
 }
 
-
-
 #profile-box {
   border: solid black;
   float: left;
@@ -72,6 +70,11 @@ header {
     width: 1200px;
     margin: 0 auto;
     text-align: center;
+   
+}
+
+body>.container{
+   height: 60vh;
 }
 
 .home-title {
@@ -80,4 +83,15 @@ header {
   border: solid black;
   padding: 20px;
   margin: 10px auto 10px auto;
+}
+
+footer{
+    height: 300px;
+    background: #333;
+    color: #fff;
+    padding: 30px 0 0 0;
+}
+
+.team_name li {
+    line-height: 30px;
 }
