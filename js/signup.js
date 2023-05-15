@@ -30,7 +30,7 @@ async function handleSignup() {
     else if (!password) { return alert("비밀번호는 필수 입력사항입니다!") }
     else if (password != password_check) { return alert("비밀번호를 확인해주세요!") }
     else if (!email) { return alert("이메일은 필수입력사항입니다!") }
-    else if (age <= 20) { return alert('미성년자는 가입할 수 없습니다') }
+    else if (age <= 19) { return alert('미성년자는 가입할 수 없습니다') }
 
     formdata.append('email', email)
     formdata.append('identify', identify)

@@ -4,7 +4,7 @@ const no_image =
   "https://usagi-post.com/wp-content/uploads/2020/05/no-image-found-360x250-1.png";
 
 let payload = localStorage.getItem("payload");
-const payload_parse = JSON.parse(payload);
+let payload_parse = JSON.parse(payload);
 
 let token = localStorage.getItem("access");
 

@@ -1,5 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const articleId = urlParams.get("article_id");
+payload_parse = payload ? JSON.parse(payload) : {};
 
 // 코멘트 가져오는 함수
 async function getComments(articleId) {
