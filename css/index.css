@@ -1,0 +1,98 @@
+.header_btn {
+    width: 1200px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+header {
+    font-size: 31px;
+    font-weight: 500;
+    line-height: 100px;
+}
+
+#profile-box {
+  border: solid black;
+  float: left;
+  width: 20%;
+  height: 200px;
+  text-align: center;
+  display: block;
+  margin-top: 35px;
+}
+
+#button-box {
+  line-height: 100px;
+}
+
+#button-box > button {
+  margin: 10px;
+}
+
+.home-button {
+  width: 40%;
+  height: 30px;
+  border-radius: 10px;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+#sort-btn {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+#content-box {
+  display: flex;
+  margin: auto;
+  width: 75%;
+  background-color: rgb(255, 247, 231);
+  float: right;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#content-box .img-box {
+  width: 200px;
+  height: 200px;
+  display: block;
+  object-fit: cover;
+  margin: auto;
+  padding: 20px;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+   
+}
+
+body>.container{
+   height: 60vh;
+}
+
+.home-title {
+  text-align: center;
+  font-size: 3rem;
+  border: solid black;
+  padding: 20px;
+  margin: 10px auto 10px auto;
+}
+
+footer{
+  margin-top: 150px;
+    height: 300px;
+    background: #333;
+    color: #fff;
+    padding: 30px 0 0 0;
+}
+
+.team_name li {
+    line-height: 30px;
+}

@@ -5,14 +5,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/signup.css">
-    <script src="./js/signup.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <script src="../js/signup.js"></script>
+    <title>Signup</title>
 </head>
 
 <body>
-
+    <header class="Header" id="Header">
+        <div class="container">
+            <h1>술술술</h1>
+        </div>
+    </header>
+    <h1>회원가입 페이지 </h1>
+    <p>아이디 : <input type="text" name="identify" id="identify" placeholder="아이디"></p>
+    <p>비밀번호 : <input type="password" name="password" id="password" placeholder="비밀번호"></p>
+    <p>비밀번호 확인 : <input type="password" name="password_check" id="password_check" placeholder="비밀번호 확인"></p>
+    <p>이메일 : <input type="email" name="email" id="email" placeholder="이메일"></p>
+    <p>나이 : <input type="text" name="age" id="age" placeholder="나이"></p>
+    <p>닉네임 : <input type="text" name="nickname" id="nickname" placeholder="닉네임"></p>
+    <p>주종 : <select name="fav_alcohol" id="fav_alcohol">
+            <option value="" selected>----------</option>
+            <option value="SOJU">소주</option>
+            <option value="BEER">맥주</option>
+            <option value="WINE">와인</option>
+            <option value="LIQUOR">양주</option>
+            <option value="TAKJU">탁주</option>
+            <option value="ETC">기타</option>
+            <option value="NO">응답하지 않음</option>
+        </select></p>
+    <p>주량 : <select name="amo_alcohol" id="amo_alcohol">
+            <option value="" selected>----------</option>
+            <option value="BABY">알쓰</option>
+            <option value="CHOBO">술찌</option>
+            <option value="JUNGSU">애주가</option>
+            <option value="GOSU">술꾼</option>
+            <option value="GOD">디오니소스</option>
+        </select></p>
+    <p>프로필 이미지 :
+        <input type="file" id="profile_img" onchange="readURL(this);">
+        <img id="preview" />
+    </p>
+    <button type="button" onclick="handleSignup()">회원가입</button>
+    <footer>
+        <div class="container">
+            <ul class="team_name">
+                <li>
+                    <p>A5A조 술술술 프로젝트</p>
+                    <a href="https://github.com/taeseokyoung/drinkdrinkdrink"><i class="xi-github"></i></a>
+                    <a href="https://tae-seokyoung.tistory.com/"><i class="xi-pen"></i></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 </body>
 
 </html>

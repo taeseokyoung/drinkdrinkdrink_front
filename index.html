@@ -2,30 +2,56 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <script src="./js/index.js"></script>
-    <title>술술술</title>
-
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <link rel="stylesheet" href="../css/index.css" />
+  <script src="../js/index.js"></script>
+  <script src="../js/api.js"></script>
+  <title>술술술</title>
 </head>
 
 <body>
-    <h2>메인페이지</h2>
-
-
-
-
-
-
-
-
-
-
-
-
+  <header class="Header" id="Header">
+    <div class="container">
+      <h1>술술술</h1>
+    </div>
+  </header>
+  <div class="header_btn" id="mypage_btn">
+    <button type="button" onclick="moveHome()">홈으로 가기</button>
+  </div>
+  <div class="container">
+    <div id="profile-box">
+      <div id="button-box"></div>
+    </div>
+    <div id="article-box">
+      <div id="sort-btn">
+        <button id="stars-btn" onclick="handleArticles(this)">
+          평점 순
+        </button>
+        <button id="recent-btn" onclick="handleArticles(this)">
+          최신 순
+        </button>
+        <button id="likes-btn" onclick="handleArticles(this)">
+          좋아요 순
+        </button>
+      </div>
+      <div id="content-box"></div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <ul class="team_name">
+        <li>
+          <p>A5A조 술술술 프로젝트</p>
+          <a href="https://github.com/taeseokyoung/drinkdrinkdrink"><i class="xi-github"></i></a>
+          <a href="https://tae-seokyoung.tistory.com/"><i class="xi-pen"></i></a>
+        </li>
+      </ul>
+    </div>
+  </footer>
 </body>
 
 </html>
