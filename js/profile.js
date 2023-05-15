@@ -30,7 +30,7 @@ window.onload = async function () {
 
     } else {
         const profile = document.createElement("img")
-        profile.setAttribute("src", `${backend_base_url}${users.image}`)
+        profile.setAttribute("src", `${backend_base_url}${profile_img}`)
         my_profile_img.append(profile)
     }
 
